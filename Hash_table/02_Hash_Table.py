@@ -120,6 +120,12 @@ class Hash_Table:
         else:
             linked_list = self._get_linked_list_for_key(key)
             linked_list.append(key, value)
+    
+    def delete_by_key(self, key):
+        existing_node = self._look_up_node(key)
+        if existing_node is not None:
+            linked_list = self._get_linked_list_for_key(key)
+            linked_list.delete(existing_node)
 
 test_scores = Hash_Table(50)
 
@@ -133,11 +139,7 @@ test_scores.insert("동욱", 87)
 print(test_scores)
 
 print("===================")
-test_scores.insert("현승", 10)
-test_scores.insert("태호", 20)
-test_scores.insert("지웅", 99)
-test_scores.insert("규식", 97)
-test_scores.insert("신의", 88)
-test_scores.insert("영훈", 30)
-test_scores.insert("동욱", 87)
+test_scores.delete_by_key("현승")
+test_scores.delete_by_key("태호")
+test_scores.delete_by_key("지웅")
 print(test_scores)
