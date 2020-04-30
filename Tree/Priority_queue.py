@@ -1,5 +1,6 @@
 # Priority queue
 # Abstract data type
+# Using heap
 
 def swap(tree, index_1, index_2):
     temp = tree[index_1]
@@ -36,7 +37,9 @@ class PriorityQueue:
 
 
     def insert(self, data):
-        
+        # 1. insert data at last index
+        # 2. compare with parent node
+        # 3. swap or not 
         self.heap.append(data)
         reverse_heapify(self.heap, len(self.heap)-1)
         
